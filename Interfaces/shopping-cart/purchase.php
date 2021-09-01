@@ -28,9 +28,9 @@ if (isset($_POST['purchase'])) {
             mysqli_stmt_bind_param($stmt, "isii", $Order_id, $name, $price, $quantity);
             foreach($_SESSION['shopping_cart'] as $key =>$values)
             {
-                $name=$_GET['food_name'];
-                $price=$_GET['food_price'];
-                $quantity=$_GET['quan'];
+                $name=$values['name'];
+                $price=$values['price'];
+                $quantity=$values['quantity'];
                 mysqli_stmt_execute($stmt);
 
             }
